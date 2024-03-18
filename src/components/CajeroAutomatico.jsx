@@ -84,30 +84,36 @@ const CajeroAutomatico = () => {
   return (
     <>
       <header className=" bg-[#200020] fixed w-full z-10">
-        <nav className="flex items-center justify-between px-32 py-4">
+        <nav className="flex items-center justify-between md:px-32 px-12 py-4">
           <div className="flex">
-            <span className="absolute left-[8%] p-[7px] bg-[#DA0081]"></span>
-            <h1 className="font-bold font-sans text-white  text-5xl ">
+            <span className="absolute left-[8%] md:p-[7px] p-[4px] bg-[#DA0081]"></span>
+            <h1 className="font-bold font-sans text-white text-3xl md:text-5xl ">
               Bank
             </h1>
           </div>
+          
+         
           <button
-            className="text-white py-2 rounded-sm tracking-wider px-8 bg-[#DA0081]"
+            className="hidden md:block  text-white py-2 rounded-sm tracking-wider px-8 bg-[#DA0081]"
             type="button"
             onClick={() => setOpcion("salir")}
           >
             Salir
           </button>
+
+<span className="material-symbols-outlined text-white md:hidden">
+menu
+</span>
         </nav>
       </header>
 
       <main className="bg-[url('https://transacciones.nequi.com/bdigital/images/background.png')] bg-right bg-no-repeat bg-[#fbe5f2] pt-20">
-        <div className="mx-auto  py-20 w-[40%]  rounded-xl">
+        <div className="mx-auto  py-20 md:w-[40%] w-[90%]  rounded-xl">
           <form
             onSubmit={handleSubmit}
             className=" flex flex-col gap-10 bg-white px-10 py-12 rounded-lg shadow-lg"
           >
-            <div className="flex gap-4 items-center">
+            <div className="flex md:flex-row flex-col gap-4 items-center">
               <label htmlFor="monto" className=" font-medium text-xl ">
                 Monto a Retirar:
               </label>
@@ -149,7 +155,7 @@ const CajeroAutomatico = () => {
               type="submit"
               onClick={() => setOpcion("borrar")}
               className="">
-                <IconDelete className="absolute top-[35.5%] left-[66%] " />
+                <IconDelete className="absolute md:top-[35.5%] top-[39%] md:left-[66%] " />
               </button>
               
              
@@ -157,6 +163,14 @@ const CajeroAutomatico = () => {
           </form>
         </div>
       </main>
+      <footer className="bg-[#200020] py-10 text-white">
+      <div className="text-center text-xs md:text-sm font-thin ">
+      
+        <span>
+          © Derechos de autor 2024. Hecho por <b>Carlos Dev</b>
+        </span>
+      </div>
+      </footer>
     </>
   );
 };
